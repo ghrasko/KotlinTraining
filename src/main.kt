@@ -1,24 +1,26 @@
-import java.lang.Math.abs
-import kotlin.math.*
-
-val myName = "Gábor"
-
 fun main(args: Array<String>) {
-    var num1 = 12
-    val num2 = 10
+    var aString = "Hello!"      // char sequence = string
 
-    val quotient:Double = num1.toDouble().div(num2)
-    println("Quotient is $quotient")
+    println(aString)
 
-    val neg = -145.7
-    // val absolute = abs(neg)
-    val absolute = Math.abs(neg)
+    val empty = String()
+    println("\"$empty\"")
 
-    println("neg is $neg ant its absolute is $absolute")
-    println("Rounded value is ${Math.round(absolute)}")
+    val cArr:CharArray = aString.toCharArray()      // char array
+    println(cArr.toList())
+    println(aString.toList())
 
-    println("neg is $neg ant its absolute is $absolute")
-    println("Rounded value is ${absolute.roundToInt()}")
+    val bArr:ByteArray = aString.toByteArray()
+    println(bArr.toList())
 
-    println("Have a piece of $PI")
+    aString += " And Welcome!"
+    println(aString)
+
+    val len = aString.length
+    for (i:Int in 0 until len) {
+//        val c:Char = aString[i]
+        val c:Char = aString.get(i)
+        println(c)
+    }
 }
+
