@@ -1,27 +1,24 @@
+import java.lang.Math.abs
+import kotlin.math.*
+
 val myName = "Gábor"
 
 fun main(args: Array<String>) {
-    val i = 3.toDouble()
-
-    println("Hello ${args[0]}")
-    println("The first argument is " + args[0])
-    println("i is a simple number: $i")
-    println("My name is $myName")
-
-    println("The type of i is ${i::class.simpleName}")
-    println("The qualified name of i is ${i::class.qualifiedName}")
-
     var num1 = 12
     val num2 = 10
 
-    val match:Boolean = (num1 == num2)
-    println("Match = $match")
+    val quotient:Double = num1.toDouble().div(num2)
+    println("Quotient is $quotient")
 
-//    val match2:Boolean = num1.equals(num2)
-//    println("Match2 = $match2")
+    val neg = -145.7
+    // val absolute = abs(neg)
+    val absolute = Math.abs(neg)
 
-    println("Comparison result = ${num1.compareTo(num2)}")
+    println("neg is $neg ant its absolute is $absolute")
+    println("Rounded value is ${Math.round(absolute)}")
 
-    num1++
-    println("Increased num1 is $num1")
+    println("neg is $neg ant its absolute is $absolute")
+    println("Rounded value is ${absolute.roundToInt()}")
+
+    println("Have a piece of $PI")
 }
