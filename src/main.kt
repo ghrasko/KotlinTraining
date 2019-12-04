@@ -2,12 +2,9 @@ import kotlin.NumberFormatException
 
 fun main(args: Array<String>) {
     try {
-        println("Enter 1st number: ")
-        val num1 : Double = readLine()!!.toDouble()
-        println("Select operator: + - * /")
-        val op : String? = readLine()
-        println("Enter 2nd number: ")
-        val num2 : Double = readLine()!!.toDouble()
+        val num1: Double = MathLib.getNumInput("Enter 1st number: ")
+        val op : String? = MathLib.getStringInput("Select operator: + - * /")
+        val num2: Double = MathLib.getNumInput("Enter 2nd number: ")
 
         val res : Double = when (op) {
             "+" -> num1 + num2
@@ -32,4 +29,5 @@ fun main(args: Array<String>) {
         println("ERROR: ${e.message}")
     }
 }
+
 
