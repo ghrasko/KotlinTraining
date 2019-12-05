@@ -1,16 +1,22 @@
-import java.math.BigDecimal
 import kotlin.NumberFormatException
+import Operation.*
 
 fun main(args: Array<String>) {
     try {
+        val num1: Double = MathLib.getNumInput("Enter 1st number: ")
+        val num2: Double = MathLib.getNumInput("Enter 2nd number: ")
+        val op : String? = MathLib.getStringInput("Select operator: + - * /")
 
-        val mathLib = MathLib()
+        val res : Double =
+            when (op) {
+                ADD.operator -> MathLib.addValues(num1, num2)
+                SUBTRACT.operator -> MathLib.subtractValues(num1, num2)
+                MULTIPLY.operator -> MathLib.multiplyValues(num1, num2)
+                DIVIDE.operator -> MathLib.divideValues(num1, num2)
+                else -> throw Exception("Invalid operator")
+            }
 
-        while(true) {
-            val num: Double = MathLib.getNumInput("Enter a number: ")
-            mathLib.addValue(num)
-            println("The new sum is ${mathLib.runningTotal}")
-        }
+        println("$num1 $op $num2 = $res")
     }
     catch(e: KotlinNullPointerException) {                  // One can imitate this by typing Ctrl-D
         println("ERROR: Input is missing or unexpectedly terminated.")

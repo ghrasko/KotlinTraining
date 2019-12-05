@@ -18,5 +18,11 @@ class MathLib {
             println(prompt)
             return readLine()
         }
+
+        fun addValues(num1: Double, num2: Double) = num1 + num2
+        fun subtractValues(num1: Double, num2: Double) = num1 - num2
+        fun multiplyValues(num1: Double, num2: Double) = num1 * num2
+        // Divide by zero not cause "Division by Zero" exception with doubles. Results "Infinity"
+        fun divideValues(num1: Double, num2: Double) = num1 / num2
     }
 }
