@@ -1,3 +1,5 @@
+package model
+
 data class ClothingItem(private var _type: String?, val size: String, var price: Double) {
     init {
         _type = _type?.toUpperCase() ?: "UNKNOWN"
