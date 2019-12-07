@@ -1,30 +1,59 @@
-import model.ClothingItem
-import model.Person
-import java.text.NumberFormat
-import java.util.*
-
 fun main(args: Array<String>) {
-    val item = ClothingItem("Shirt", "L", 19.99)
-    println(item)
 
-    item.price = 15.99
-    println(item)
+    println("--------- STRING ARRAY ---------")
+    val strings1 = arrayOf("red", "green", "blue")
+    for (element in strings1) {
+        println(element)
+    }
+    println("---------- MIXED ARRAY --------")
 
-    val item2 = ClothingItem("M", 14.99)
-    println(item2)
+    val mixed1 = arrayOf("red", 12, "blue")
+    for (element in mixed1) {
+        println(element)
+    }
 
-    val person = Person("Gábor", "Hraskó")
-    println("That person is ${person.fullName}")
+    println("----------- NULL ARRAY -------")
+    val nulls1 = arrayOfNulls<String>(3)
+    for (element in nulls1) {
+        println(element)
+    }
 
-    println("item price = ${item2.price}")
+    println("----------- NULL ARRAY ASSIGNMENT -------")
+    nulls1[0] = "black"
+    nulls1[1] = "white"
+    nulls1.set(2, "purple")
+    for (element in nulls1) {
+        println(element)
+    }
 
-    Locale.setDefault(Locale.FRANCE)
-    val formatter = NumberFormat.getCurrencyInstance()
-    println("item price = ${formatter.format(item2.price)}")
+    println("----------- INT ARRAY -------")
+    val ints1 = intArrayOf(1, 2, 3, 5, 7, 11, 13, 17)
+    for (element in ints1) {
+        println(element)
+    }
 
-    Locale.setDefault(Locale.CHINA)
-    val formatter2 = NumberFormat.getCurrencyInstance()
-    println("item price = ${formatter2.format(item2.price)}")
+    println("----------- SORT ARRAY -------")
+    strings1.sort()
+    for (element in strings1) {
+        println(element)
+    }
+
+    println("----------- SORT ARRAY DESCENDING -------")
+    ints1.sortDescending()
+        for (element in ints1) {
+        println(element)
+    }
+
+    println("----------- SORT ARRAY INTO NEW ARRAY -------")
+    val strings2 = strings1.sorted()
+    for (element in strings2) {
+        println(element)
+    }
+
+    println("----------- RANDOMIZE INT ARRAY -------")
+    for (i in 1..3) {
+        println("$i: ${ints1.random()}")
+    }
 
 }
 
